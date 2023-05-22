@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.all.order("created_at DESC")
   end
 
   def new
