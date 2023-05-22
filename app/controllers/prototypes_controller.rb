@@ -16,6 +16,12 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy
+    redirect_to root_path
+  end
+
 
   def edit
     @prototype = Prototype.find(params[:id])
@@ -35,7 +41,6 @@ class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
   end
-
 
   private
 
